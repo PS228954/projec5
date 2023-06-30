@@ -1,63 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:mad2_app/about_page.dart';
 import 'package:mad2_app/home_page.dart';
+import 'package:mad2_app/nav.dart';
 import 'package:mad2_app/profile_page.dart';
+import 'package:mad2_app/personeel_page.dart';
+import 'package:mad2_app/login_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MainApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
+class MainApp extends StatefulWidget {
+  const MainApp({Key? key}) : super(key: key);
   @override
-  Widget build(BuildContext context) {
+  State<MainApp> createState() => _MainAppState();
+}
+class _MainAppState extends State<MainApp> {
+  bool _signedIn = false;
+  void setSignedIn(bool signedIn) {
+    setState(() {
+      _signedIn = signedIn;
+    });
+  }
+  @override Widget build(BuildContext context) {
+    print(_signedIn);
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
-      home: const MyHomePage(title: 'Liverpool'),
+      home: _signedIn
+          ? Nav(setSignedIn: setSignedIn, title: 'Liverpool',)
+          : LoginPage(setSignedIn: setSignedIn),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int currentPage = 0;
-  List<Widget> pages = const [
-    HomePage(),
-    ProfilePage(),
-    LicensePageCustom()
-  ];
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-
-        title: Text(widget.title),
-      ),
-      body: pages[currentPage],
-      bottomNavigationBar: NavigationBar(
-        destinations: const [
-          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
-          NavigationDestination(icon: Icon(Icons.contact_support), label: 'About')
-        ],
-        onDestinationSelected: (int index){
-          setState(() {
-            currentPage = index;
-          });
-        },
-        selectedIndex: currentPage,
-      ),
-    );
-  }
-}
