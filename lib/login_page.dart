@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mad2_app/registration_page.dart';
 import 'package:mad2_app/services/authentication_service.dart';
 
 class LoginPage extends StatefulWidget {
@@ -56,30 +57,38 @@ class _LoginPageState extends State<LoginPage> {
           }
         }
       }, child: const Text('Inloggen'),),
+      ElevatedButton(onPressed: () async {
+        Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const RegistreerPage()),
+
+              );
+
+      }, child: const Text('Registreren'),),
     ],),),);
   }
 }
-class FirstRoute extends StatelessWidget {
-  const FirstRoute({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-            child: const Text('Open route'),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SecondRoute()),
-              );
-            }
-        ),
-      ),
-    );
-  }
-}
-
+// class FirstRoute extends StatelessWidget {
+//   const FirstRoute({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: ElevatedButton(
+//             child: const Text('Open route'),
+//             onPressed: () {
+//               Navigator.push(
+//                 context,
+//                 MaterialPageRoute(builder: (context) => const SecondRoute()),
+//               );
+//             }
+//         ),
+//       ),
+//     );
+//   }
+// }
+//
 class SecondRoute extends StatelessWidget {
   const SecondRoute({super.key});
 
