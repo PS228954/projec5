@@ -47,7 +47,12 @@ class _HomePageState extends State<HomePage> {
           itemCount: posts?.length,
             itemBuilder: (context, index) {
               return Container(
-                child: Text(posts![index].name, style: const TextStyle(fontSize: 20),),
+                child: Column(
+                  children: [
+                    Text(posts![index].name, style: const TextStyle(fontSize: 20),),
+                    Text(posts![index].localName, style: const TextStyle(fontSize: 20),),
+                  ],
+                ),
               );
             },
         ),
