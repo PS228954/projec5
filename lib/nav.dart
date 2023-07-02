@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mad2_app/profile_page.dart';
+import 'package:mad2_app/home_page.dart';
 import 'about_page.dart';
-import 'home_page.dart';
+import 'profile_page.dart';
 
 class Nav extends StatefulWidget {
   const Nav({Key? key, required this.setSignedIn, required this.title}) : super(key: key);
@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
 class _NavState extends State<Nav> {
   int currentPage = 0;
   List<Widget> pages = [
-    HomePage(setSignedIn: (bool signedIn) {  },),
     const ProfilePage(),
+    HomePage(setSignedIn: (bool signedIn) {  },),
     const LicensePageCustom()
   ];
   @override
@@ -39,10 +39,10 @@ class _NavState extends State<Nav> {
 
         title: Text(widget.title),
         actions: <Widget>[
-          Padding(padding: EdgeInsets.only(right: 20.0),
+          Padding(padding: const EdgeInsets.only(right: 20.0),
           child: GestureDetector(
             onTap: (){widget.setSignedIn(false);},
-              child:Icon(
+              child:const Icon(
                 Icons.logout,
                 size:26.0,
               ),
@@ -54,7 +54,7 @@ class _NavState extends State<Nav> {
       bottomNavigationBar: NavigationBar(
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
+          NavigationDestination(icon: Icon(Icons.holiday_village), label: 'Holidays'),
           NavigationDestination(icon: Icon(Icons.contact_support), label: 'About')
         ],
         onDestinationSelected: (int index){

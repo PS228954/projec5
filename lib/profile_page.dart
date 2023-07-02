@@ -5,6 +5,15 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('hallo');
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("images/holii.jpg"),
+              fit: BoxFit.cover
+          ),
+        ),
+      ),
+    );
   }
 }

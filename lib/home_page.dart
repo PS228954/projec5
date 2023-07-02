@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:mad2_app/services/remote_service.dart';
 import 'models/post.dart';
+import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.setSignedIn}) : super(key: key);
@@ -33,8 +34,6 @@ class _HomePageState extends State<HomePage> {
     print('in GetData 2');
 
   }
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,18 +44,22 @@ class _HomePageState extends State<HomePage> {
         ),
         child: ListView.builder(
           itemCount: posts?.length,
-            itemBuilder: (context, index) {
-              return Container(
-                child: Column(
-                  children: [
-                    Text(posts![index].name, style: const TextStyle(fontSize: 20),),
-                    Text(posts![index].localName, style: const TextStyle(fontSize: 20),),
-                  ],
-                ),
-              );
-            },
+          itemBuilder: (context, index) {
+            return Container(
+              child: Column(
+                children: [
+                  Text(posts![index].name, style: const TextStyle(fontSize: 20),),
+                  Text(posts![index].localName, style: const TextStyle(fontSize: 20),),
+                  Text(posts![index].date.toString(), style: const TextStyle(fontSize: 20),),
+                ],
+              ),
+            );
+          },
         ),
       ),
     );
   }
 }
+
+
+

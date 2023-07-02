@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mad2_app/about_page.dart';
-import 'package:mad2_app/home_page.dart';
-import 'package:mad2_app/nav.dart';
 import 'package:mad2_app/profile_page.dart';
+import 'package:mad2_app/nav.dart';
+import 'package:mad2_app/home_page.dart';
 import 'package:mad2_app/personeel_page.dart';
 import 'package:mad2_app/login_page.dart';
 
@@ -27,7 +27,7 @@ class _MainAppState extends State<MainApp> {
     print(_signedIn);
     return MaterialApp(
       home: _signedIn
-          ? Nav(setSignedIn: setSignedIn, title: 'Liverpool',)
+          ? Nav(setSignedIn: setSignedIn, title: 'Holidays',)
           : LoginPage(setSignedIn: setSignedIn),
     );
   }
