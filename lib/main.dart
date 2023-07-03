@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mad2_app/about_page.dart';
-import 'package:mad2_app/profile_page.dart';
-import 'package:mad2_app/nav.dart';
 import 'package:mad2_app/home_page.dart';
-import 'package:mad2_app/personeel_page.dart';
+import 'package:mad2_app/nav.dart';
+import 'package:mad2_app/holiday_page.dart';
 import 'package:mad2_app/login_page.dart';
 
 void main() {

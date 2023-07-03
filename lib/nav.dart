@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mad2_app/home_page.dart';
+import 'package:mad2_app/holiday_page.dart';
 import 'about_page.dart';
-import 'profile_page.dart';
+import 'home_page.dart';
 
 class Nav extends StatefulWidget {
   const Nav({Key? key, required this.setSignedIn, required this.title}) : super(key: key);
@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
 class _NavState extends State<Nav> {
   int currentPage = 0;
   List<Widget> pages = [
-    const ProfilePage(),
-    HomePage(setSignedIn: (bool signedIn) {  },),
+    const HomePage(),
+    HolidayPage(setSignedIn: (bool signedIn) {  },),
     const LicensePageCustom()
   ];
   @override
