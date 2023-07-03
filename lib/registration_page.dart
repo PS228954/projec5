@@ -20,7 +20,7 @@ class RegistreerPage extends StatelessWidget {
             border: OutlineInputBorder(), hintText: 'email adres'),
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return 'Vul emailadres in';
+            return 'Vul emailadres in.';
           }
           return null;
         },),
@@ -32,7 +32,7 @@ class RegistreerPage extends StatelessWidget {
             border: OutlineInputBorder(), hintText: 'password'),
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return 'Vul password in';
+            return 'Vul password in.';
           }
           return null;
         },),

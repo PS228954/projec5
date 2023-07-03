@@ -26,10 +26,10 @@ class _LoginPageState extends State<LoginPage> {
       TextFormField(controller: _emailTextController,
         textInputAction: TextInputAction.next,
         decoration: const InputDecoration(
-            border: OutlineInputBorder(), hintText: 'email-adres'),
+            border: OutlineInputBorder(), hintText: 'email-adress'),
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return 'Voer hier uw email-adres in';
+            return 'Voer hier uw email-adres in.';
           }
           return null;
         },),
@@ -41,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
             border: OutlineInputBorder(), hintText: 'Wachtwoord'),
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return 'Voer hier uw wachtwoord in';
+            return 'Voer hier uw wachtwoord in.';
           }
           return null;
         },),
